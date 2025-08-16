@@ -360,16 +360,6 @@ font:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Background
-# 背景图片
-background:
-  enable: false
-  opacity: .2
-  dark: https://i.pinimg.com/originals/d8/b3/9d/d8b39d12b653810db452c437211aeb2e.png
-  light: https://i.pinimg.com/originals/93/57/38/935738ed9657b296c2ef0ebd2151eb66.jpg
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Lure
 # When the user exits the page, modify the title
 # 当用户退出页面时，修改标题
@@ -624,14 +614,11 @@ keyboard:
 
 # --------------------------- start ---------------------------
 # Lazyload
-# 图片懒加载
+# 懒加载
 lazyload:
   enable: false
-  # post, site
   field: site
-  # 加载时替换图
   placeholder: ""
-  # 加载失败替换图
   errorimg: /img/error_load.avif
 # --------------------------- end ---------------------------
 
@@ -740,11 +727,9 @@ verify_site:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# CSS Prefix
-# CSS 前缀
-# When turned on, it will automatically prefix the CSS (to get better browser support), but this will increase the size of the CSS file.
-# 开启后会自动给 CSS 加前缀（以获得更好的浏览器支持），但这会增加 CSS 文件的大小。
-css_prefix: false
+# Legacy CSS Prefix 
+# CSS前缀配置
+css_prefix: true
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -964,12 +949,19 @@ google_adsense:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# 非必要请勿修改
+# CDN Configuration
+# CDN配置
 CDN:
+  # CDN providers configuration
+  # CDN提供商配置
   internal: local # local / cdnjs / jsdelivr / unpkg / custom
   third_party: custom # cdnjs / jsdelivr / unpkg / custom
   version: true # 是否使用版本号
-  custom_format: https://fastly.jsdelivr.net/npm/${name}@${version}/${min_file} # 自定义格式
+  
+  # Custom format for CDN URLs
+  # CDN URL 自定义格式
+  custom_format: https://cdn.jsdelivr.net/npm/${name}@${version}/${min_file}
+  
   # 直接覆盖默认 CDN 链接（优先级最高）
   options:
     # algolia_search:
