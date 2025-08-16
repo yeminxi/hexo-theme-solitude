@@ -41,7 +41,7 @@ class LocalSearch {
             this.bindEvents();
             this.bindKeyboardShortcuts();
         } catch (error) {
-            console.error('搜索初始化失败:', error);
+            console.error('Search initialization failed:', error);
         }
     }
 
@@ -50,7 +50,7 @@ class LocalSearch {
      */
     async loadSearchData() {
         if (!GLOBAL_CONFIG?.localsearch?.path) {
-            throw new Error('搜索数据路径未配置');
+            throw new Error('Search data path not configured');
         }
 
         this.isLoading = true;
@@ -63,7 +63,7 @@ class LocalSearch {
             const data = await response.text();
             this.parseSearchData(data);
         } catch (error) {
-            throw new Error(`加载搜索数据失败: ${error.message}`);
+            throw new Error(`Failed to load search data: ${error.message}`);
         } finally {
             this.isLoading = false;
         }
@@ -89,11 +89,9 @@ class LocalSearch {
                     link: getTextContent("url"),
                     content: getTextContent("content")
                 };
-            }).filter(item => item.title && item.link); // 过滤无效数据
-            
-            console.log(`成功加载 ${this.store.length} 条搜索数据`);
+            }).filter(item => item.title && item.link);
         } catch (error) {
-            throw new Error(`解析搜索数据失败: ${error.message}`);
+            throw new Error(`Failed to parse search data: ${error.message}`);
         }
     }
 
@@ -237,8 +235,8 @@ class LocalSearch {
             this.renderResults(this.currentResults, this.currentPage, searchTime);
             this.renderPagination(this.currentResults.length);
         } catch (error) {
-            console.error('搜索执行失败:', error);
-            this.showErrorMessage('搜索执行失败，请重试');
+            console.error('Search error:', error);
+            this.showErrorMessage('Search failed, please try again');
         }
     }
 

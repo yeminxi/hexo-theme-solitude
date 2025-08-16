@@ -36,7 +36,7 @@ class AlgoliaSearch {
     init() {
         try {
             if (!this.validateConfig()) {
-                console.error("Algolia 配置无效！");
+                console.error("Algolia configuration is invalid!");
                 return;
             }
 
@@ -46,7 +46,7 @@ class AlgoliaSearch {
             
             this.isInitialized = true;
         } catch (error) {
-            console.error('Algolia 搜索初始化失败:', error);
+            console.error('Algolia search initialization failed:', error);
         }
     }
 
@@ -91,7 +91,7 @@ class AlgoliaSearch {
      */
     showLoading() {
         if (this.elements.hitsContainer) {
-            const loadingHtml = `<div class="loading">${GLOBAL_CONFIG.lang?.search?.loading || '搜索中...'}</div>`;
+            const loadingHtml = `<div class="loading">${GLOBAL_CONFIG.lang?.search?.loading || 'Searching...'}</div>`;
             this.elements.hitsContainer.innerHTML = loadingHtml;
         }
     }
@@ -137,7 +137,7 @@ class AlgoliaSearch {
             container: this.elements.inputContainer,
             showReset: false,
             showSubmit: false,
-            placeholder: GLOBAL_CONFIG.lang?.search?.placeholder || '输入关键词搜索',
+            placeholder: GLOBAL_CONFIG.lang?.search?.placeholder || 'Search by keywords',
             showLoadingIndicator: false,
             searchAsYouType: true,
         });
@@ -162,7 +162,7 @@ class AlgoliaSearch {
         const statsText = GLOBAL_CONFIG.lang?.search?.hit
             ?.replace(/\$\{hits}/, data.nbHits)
             ?.replace(/\$\{time}/, data.processingTimeMS) || 
-            `找到 ${data.nbHits} 条结果，用时 ${data.processingTimeMS} 毫秒`;
+            `Found ${data.nbHits} results, took ${data.processingTimeMS} ms`;
         
         return `<hr>${statsText}`;
     }
@@ -202,8 +202,8 @@ class AlgoliaSearch {
                     <span class="algolia-hits-item-title">${result.title?.value || "无标题"}</span>
                 </a>`;
         } catch (error) {
-            console.error('渲染搜索结果项失败:', error);
-            return '<div class="algolia-hit-error">渲染失败</div>';
+            console.error('Failed to render search result item:', error);
+            return '<div class="algolia-hit-error">Failed to render</div>';
         }
     }
 
@@ -215,7 +215,7 @@ class AlgoliaSearch {
         this.delayedFocus();
         
         const emptyText = GLOBAL_CONFIG.lang?.search?.empty?.replace(/\$\{query}/, data.query) || 
-                         `没有找到与 "${data.query}" 相关的内容`;
+                         `No results found for "${data.query}"`;
         
         return `<div id="algolia-hits-empty">${emptyText}</div>`;
     }
