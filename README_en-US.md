@@ -2,7 +2,7 @@ English 丨 [Español](README_es-ES.md) 丨 [简体中文](README.md)丨[繁体�
 
 <div align="center">
 
-<img width="70%" src=".github/screenshot.avif" />
+<img width="50%" style="margin-bottom: 2vh" src=".github/logo.avif" />
 
 An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
 
@@ -63,14 +63,6 @@ Visit [Documentation](https://solitude.js.org/) for more information.
 </a>
 
 [The CDN acceleration and security protection of this project are sponsored by Tencent EdgeOne](https://edgeone.ai/zh?from=github)
-
----
-
-<a href="https://yxvm.com/">
-   <img src="./.github/support.avif" style="border-radius:8px" width="250">
-</a>
-
-[NodeSupport](https://github.com/NodeSeekDev/NodeSupport) has sponsored this project
 
 ## License
 

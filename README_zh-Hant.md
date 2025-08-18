@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img width="70%" src=".github/screenshot.avif" />
+<img width="50%" style="margin-bottom: 2vh" src=".github/logo.avif" />
 
 一款優雅的 Hexo 主題，支持懶加載、PWA、Latex 以及多種評論系統。
 
@@ -63,15 +63,6 @@
 </a>
 
 [本项目 CDN 加速及安全防护由 Tencent EdgeOne 赞助](https://edgeone.ai/zh?from=github)
-
----
-
-<a href="https://yxvm.com/">
-   <img src="./.github/support.avif" style="border-radius:8px" width="250">
-</a>
-
-[NodeSupport](https://github.com/NodeSeekDev/NodeSupport)赞助了本项目
-</div>
 
 ## 版權
 
