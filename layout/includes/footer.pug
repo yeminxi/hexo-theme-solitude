@@ -75,7 +75,7 @@ mixin footerGroups()
               })
 
       //- 随机友链
-      +conditionalWrapper(theme.footer && theme.footer.randomlink)
+      if theme.footer && theme.footer.randomlink
         .footer-group
           .footer-title-group
             h3.footer-title= _p('footer.randomlink')
