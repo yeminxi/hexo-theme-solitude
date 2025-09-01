@@ -115,18 +115,19 @@ mixin beianInfo()
 mixin footerRightLinks()
   +conditionalWrapper(theme.footer.links)
     .footer-bar-right
-      each item in theme.footer.links
-        +link(item.url, '', {
-          class: 'footer-bar-link',
-          alt: item.name
-        })
-          if item.icon
-            each icon in item.icon
-              +icon(icon)
-          else if item.img
-            img(src=url_for(item.img), alt=item.name)
-          else
-            != item.name
+      if theme.footer.links && theme.footer.links.length > 0
+        each item in theme.footer.links
+          +link(item.url, '', {
+            class: 'footer-bar-link',
+            alt: item.name
+          })
+            if item.icon
+              each icon in item.icon
+                +icon(icon)
+            else if item.img
+              img(src=url_for(item.img), alt=item.name)
+            else
+              != item.name
 
 //- 页脚底部栏组件
 mixin footerBar()
